@@ -15,7 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup,icon,theme,label,name">
-        <activity android:name=".Welcome"></activity>
+        <activity android:name=".Instagram.InstaLogin"></activity>
+        <activity android:name=".Instagram.InstaSignUp" />
+        <activity android:name=".Welcome" />
         <activity android:name=".LogInSignUP" />
         <activity android:name=".SignUp">
             <intent-filter>

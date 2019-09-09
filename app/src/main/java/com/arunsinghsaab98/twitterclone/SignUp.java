@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
+import com.arunsinghsaab98.twitterclone.Instagram.InstaSignUp;
 import com.parse.FindCallback;
 import com.parse.GetCallback;
 import com.parse.Parse;
@@ -28,7 +29,7 @@ import java.util.List;
 public class SignUp extends AppCompatActivity {
 
     private EditText name,pass;
-//    private Button btnSave;
+    private Button InstaSwitch;
 //    private TextView txtGetData;
     String allInfo ;
 
@@ -39,6 +40,17 @@ public class SignUp extends AppCompatActivity {
 
         name = findViewById(R.id.name);
         pass = findViewById(R.id.pass);
+        InstaSwitch = findViewById(R.id.Instagram);
+
+        InstaSwitch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SignUp.this, InstaSignUp.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
 //        btnSave = findViewById(R.id.btnSave);
 //        txtGetData = findViewById(R.id.txtGetData);
 
@@ -112,4 +124,7 @@ public class SignUp extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+
+
 }
