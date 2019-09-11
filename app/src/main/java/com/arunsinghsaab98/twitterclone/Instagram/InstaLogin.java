@@ -44,9 +44,10 @@ public class InstaLogin extends AppCompatActivity {
                     public void done(ParseUser user, ParseException e) {
                         if(e == null )
                         {
-                            Toast.makeText(getApplicationContext(),user.getUsername().toString()+"",Toast.LENGTH_LONG).show();
-                            Intent intent = new Intent(InstaLogin.this,InstaSignUp.class);
+                            Toast.makeText(getApplicationContext(),"welcom "+user.getUsername().toString()+"",Toast.LENGTH_LONG).show();
+                            Intent intent = new Intent(getApplicationContext(),SocialMedia.class);
                             startActivity(intent);
+                            finish();
                         }else
                         {
                             Toast.makeText(getApplicationContext(),e.getMessage(),Toast.LENGTH_LONG).show();
@@ -56,6 +57,8 @@ public class InstaLogin extends AppCompatActivity {
 
             }
         });
+
+
 
     }
 }

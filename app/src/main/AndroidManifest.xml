@@ -5,6 +5,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name=".App"
@@ -15,11 +16,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:allowBackup,icon,theme,label,name">
-        <activity android:name=".Instagram.InstaLogin"></activity>
-        <activity android:name=".Instagram.InstaSignUp" />
+        <activity android:name=".Instagram.UserPost"></activity>
+        <activity
+            android:name=".Instagram.SocialMedia"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity android:name=".Instagram.InstaLogin" />
+        <activity android:name=".SignUp" />
         <activity android:name=".Welcome" />
         <activity android:name=".LogInSignUP" />
-        <activity android:name=".SignUp">
+        <activity android:name=".Instagram.InstaSignUp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

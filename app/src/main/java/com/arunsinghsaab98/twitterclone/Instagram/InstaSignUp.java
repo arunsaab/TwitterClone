@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -28,6 +30,19 @@ public class InstaSignUp extends AppCompatActivity {
         txtSuname = findViewById(R.id.iSuname);
         txtSpass = findViewById(R.id.iSpass);
         txtEmail = findViewById(R.id.isEmail);
+
+//        txtSpass.setOnKeyListener(new View.OnKeyListener() {
+//            @Override
+//            public boolean onKey(View v, int keyCode, KeyEvent event)
+//            {
+//                if (keyCode == KeyEvent.KEYCODE_ENTER && event.getAction() == KeyEvent.ACTION_DOWN)
+//                {
+//                    onClick(iSignUp);
+//                }
+//
+//                return false;
+//            }
+//        });
 
         iSignUp = findViewById(R.id.isignUp);
         iLogIn = findViewById(R.id.ilogin);
@@ -58,8 +73,7 @@ public class InstaSignUp extends AppCompatActivity {
                         if (e == null)
                         {
                             Toast.makeText(InstaSignUp.this, "you are signed up successfully", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(InstaSignUp.this,InstaLogin.class);
-                            startActivity(intent);
+                            transitionSocialMedia();
                             finish();
 
 
@@ -74,6 +88,30 @@ public class InstaSignUp extends AppCompatActivity {
             }
         });
 
+
+
+
+    }
+
+    public void rootLayoutTapped(View view) {
+
+        try {
+
+
+            InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+            inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
+        catch (Exception e)
+        {
+//            Toast.makeText(InstaSignUp.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            e.printStackTrace();
+        }
+    }
+
+    private void transitionSocialMedia()
+    {
+        Intent intent = new Intent(getApplicationContext(),SocialMedia.class);
+        startActivity(intent);
 
     }
 }
