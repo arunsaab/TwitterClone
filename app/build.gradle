@@ -35,6 +35,7 @@ dependencies {
 
     //crud
     implementation 'com.android.support:design:28.0.0'
+    implementation 'com.github.mjn1369:prettydialog:1.0.4'
 }
 
 repositories {
